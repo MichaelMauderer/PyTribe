@@ -492,7 +492,7 @@ class connection:
         else:
             raise Exception(
                 "values should be dict, tuple or list, not '%s' (values = %s)" % (
-                type(values), values))
+                    type(values), values))
 
         # create the json message
         if request == None:
@@ -609,7 +609,7 @@ class tracker:
             return response['values']['push']
         else:
             raise Exception("Error in tracker.get_push: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def get_heartbeatinterval(self):
 
@@ -626,7 +626,8 @@ class tracker:
         else:
             raise Exception(
                 "Error in tracker.get_heartbeatinterval: %s (code %d)" % (
-                response['values']['statusmessage'], response['statuscode']))
+                    response['values']['statusmessage'],
+                    response['statuscode']))
 
     def get_version(self):
 
@@ -640,7 +641,7 @@ class tracker:
             return response['values']['version']
         else:
             raise Exception("Error in tracker.get_version: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def get_trackerstate(self):
 
@@ -668,7 +669,8 @@ class tracker:
         else:
             raise Exception(
                 "Error in tracker.get_trackerstate: %s (code %d)" % (
-                response['values']['statusmessage'], response['statuscode']))
+                    response['values']['statusmessage'],
+                    response['statuscode']))
 
     def get_framerate(self):
 
@@ -682,7 +684,7 @@ class tracker:
             return response['values']['framerate']
         else:
             raise Exception("Error in tracker.get_framerate: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def get_iscalibrated(self):
 
@@ -697,7 +699,8 @@ class tracker:
         else:
             raise Exception(
                 "Error in tracker.get_iscalibrated: %s (code %d)" % (
-                response['values']['statusmessage'], response['statuscode']))
+                    response['values']['statusmessage'],
+                    response['statuscode']))
 
     def get_iscalibrating(self):
 
@@ -712,7 +715,8 @@ class tracker:
         else:
             raise Exception(
                 "Error in tracker.get_iscalibrating: %s (code %d)" % (
-                response['values']['statusmessage'], response['statuscode']))
+                    response['values']['statusmessage'],
+                    response['statuscode']))
 
     def get_calibresult(self):
 
@@ -793,7 +797,7 @@ class tracker:
         # return value or error
         if response['statuscode'] != 200:
             raise Exception("Error in tracker.get_calibresult: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
         # return True if this was not the final calibration point
         if not 'calibpoints' in response['values']:
@@ -870,7 +874,7 @@ class tracker:
         # raise error if needed
         if response['statuscode'] != 200:
             raise Exception("Error in tracker.get_frame: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
         # parse response
         return {'timestamp': response['values']['frame']['timestamp'],
                 'time': response['values']['frame']['time'],
@@ -915,7 +919,7 @@ class tracker:
             return response['values']['screenindex']
         else:
             raise Exception("Error in tracker.get_screenindex: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def get_screenresw(self):
 
@@ -929,7 +933,7 @@ class tracker:
             return response['values']['screenresw']
         else:
             raise Exception("Error in tracker.get_screenresw: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def get_screenresh(self):
 
@@ -943,7 +947,7 @@ class tracker:
             return response['values']['screenresh']
         else:
             raise Exception("Error in tracker.get_screenresh: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def get_screenpsyw(self):
 
@@ -957,7 +961,7 @@ class tracker:
             return response['values']['screenpsyw']
         else:
             raise Exception("Error in tracker.get_screenpsyw: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def get_screenpsyh(self):
 
@@ -971,7 +975,7 @@ class tracker:
             return response['values']['screenpsyh']
         else:
             raise Exception("Error in tracker.get_screenpsyh: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def set_push(self, push=None):
 
@@ -1007,7 +1011,7 @@ class tracker:
             return self.push
         else:
             raise Exception("Error in tracker.set_push: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def set_version(self, version):
 
@@ -1026,7 +1030,7 @@ class tracker:
             return version
         else:
             raise Exception("Error in tracker.set_version: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def set_screenindex(self, index):
 
@@ -1046,7 +1050,7 @@ class tracker:
             return index
         else:
             raise Exception("Error in tracker.set_screenindex: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def set_screenresw(self, width):
 
@@ -1066,7 +1070,7 @@ class tracker:
             return width
         else:
             raise Exception("Error in tracker.set_screenresw: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def set_screenresh(self, height):
 
@@ -1086,7 +1090,7 @@ class tracker:
             return height
         else:
             raise Exception("Error in tracker.set_screenresh: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def set_screenpsyw(self, width):
 
@@ -1106,7 +1110,7 @@ class tracker:
             return width
         else:
             raise Exception("Error in tracker.set_screenpsyw: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def set_screenpsyh(self, height):
 
@@ -1126,7 +1130,7 @@ class tracker:
             return height
         else:
             raise Exception("Error in tracker.set_screenpsyh: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
 
 class calibration:
@@ -1176,7 +1180,7 @@ class calibration:
             return True
         else:
             raise Exception("Error in calibration.start: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def pointstart(self, x, y):
 
@@ -1203,7 +1207,7 @@ class calibration:
             return True
         else:
             raise Exception("Error in calibration.pointstart: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def pointend(self):
 
@@ -1282,7 +1286,7 @@ class calibration:
         # return value or error
         if response['statuscode'] != 200:
             raise Exception("Error in calibration.pointend: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
         # return True if this was not the final calibration point
         if not 'calibresult' in response['values']:
@@ -1342,7 +1346,7 @@ class calibration:
             return True
         else:
             raise Exception("Error in calibration.abort: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
     def clear(self):
 
@@ -1360,7 +1364,7 @@ class calibration:
             return True
         else:
             raise Exception("Error in calibration.clear: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
 
 class heartbeat:
@@ -1402,7 +1406,7 @@ class heartbeat:
             return True
         else:
             raise Exception("Error in heartbeat.beat: %s (code %d)" % (
-            response['values']['statusmessage'], response['statuscode']))
+                response['values']['statusmessage'], response['statuscode']))
 
 
 # # # # #
